@@ -7,7 +7,6 @@ import java.util.stream.Collectors.groupingBy
 fun birthdayCakeCandles(ar: Array<Int>): Int {
     return ar.toList().stream()
         .collect(groupingBy<Int, Int> { it })
-        .toSortedMap()
         .maxBy { it.value.size }
         ?.value
         ?.size!!
