@@ -9,6 +9,7 @@ class Test5 {
         assertEquals(299, pair.first)
         assertEquals(9271, pair.second)
 
+
         val secondPair = miniMaxSum(arrayOf(5, 5, 5, 5, 5))
         assertEquals(20, secondPair.first)
         assertEquals(20, secondPair.second)
