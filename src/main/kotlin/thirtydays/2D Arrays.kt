@@ -2,11 +2,6 @@ package thirtydays
 
 import java.util.*
 import java.util.stream.Collectors
-import kotlin.collections.*
-import kotlin.ranges.*
-import kotlin.text.*
-
-
 
 fun main(args: Array<String>) {
     val scan = Scanner(System.`in`)
