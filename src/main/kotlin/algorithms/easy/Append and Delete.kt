@@ -4,48 +4,31 @@ import java.util.*
 
 // Complete the appendAndDelete function below.
 fun appendAndDelete(s: String, t: String, k: Int): String {
-    val sDeque = ArrayDeque(s.split(""))
-    val tDeque = ArrayDeque(t.split(""))
-    val stuff = ArrayDeque<String>()
+    var commonLength = 0
 
-    //chop back until all ch match
-
-
-    var ops = k
-    //fails
-    //y
-    //yu
-    //2
-    if (sDeque.size > tDeque.size) {
-        while (ops > 0 && sDeque.size != tDeque.size) {
-            stuff.push(sDeque.pollLast())
-            ops++
-        }
-    } else {
-        while (ops > 0 && sDeque.size != tDeque.size) {
-            stuff.push(tDeque.pollLast())
-            ops++
-        }
+    for (i in 0 until java.lang.Math.min(s.length, t.length)) {
+        if (s[i] == t[i])
+            commonLength++
+        else
+            break
     }
-
-
-    //qwerasdf
-    //qwerbsdf
-    //6
-
-
-
-    return if (s.length.plus(t.length) - s.filterIndexed {index, c ->
-            index < t.length && t[index] == c
-        }.count().times(2) <= k) "Yes" else "No"
+    return if (s.length + t.length - 2 * commonLength > k) {
+        "No"
+    } else if ((s.length + t.length - 2 * commonLength) % 2 == k % 2) {
+        "Yes"
+    } else if (s.length + t.length - k < 0) {
+        "Yes"
+    } else {
+        "No"
+    }
 }
 
 fun main(args: Array<String>) {
     val scan = Scanner(System.`in`)
 
-    val s = scan.nextLine()
+    val s = scan.nextLine().trim()
 
-    val t = scan.nextLine()
+    val t = scan.nextLine().trim()
 
     val k = scan.nextLine().trim().toInt()
 
@@ -53,3 +36,25 @@ fun main(args: Array<String>) {
 
     println(result)
 }
+
+/*
+hackerhappy
+hackerrank
+9
+
+aba
+aba
+7
+
+ashley
+ash
+2
+
+aaa
+a
+5
+
+aaaaaaaaaa
+aaaaa
+7
+ */

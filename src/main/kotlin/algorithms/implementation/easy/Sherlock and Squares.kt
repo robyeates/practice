@@ -1,4 +1,4 @@
-package implementation
+package algorithms.implementation.easy
 
 import java.util.*
 
