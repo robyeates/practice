@@ -2,10 +2,10 @@ package thirtydays;
 
 import java.util.*;
 
-class Node {
+class Node2 {
     int data;
     Node next;
-    Node(int d) {
+    Node2(int d) {
         data = d;
         next = null;
     }
